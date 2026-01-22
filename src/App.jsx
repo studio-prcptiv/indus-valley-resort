@@ -496,10 +496,10 @@ const Hero = ({ setActiveTab }) => {
           initial={{ scale: isMobile ? 1 : 1.1 }}
           animate={{ scale: 1 }}
           transition={{ duration: isMobile ? 0 : 10, ease: "easeOut" }}
-          src="https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&q=70&w=2000"
-          srcSet="https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&q=70&w=600 600w, 
-                  https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&q=70&w=1200 1200w, 
-                  https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&q=70&w=2000 2000w"
+          // OPTIMIZED IMAGE: Reduced quality (q=50) and width (w=1400) for faster natural load
+          src="https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&q=50&w=1400"
+          srcSet="https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&q=50&w=600 600w, 
+                  https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&q=50&w=1400 1400w"
           sizes="100vw"
           alt="Pine Palace Platinum Interior"
           className="w-full h-[120%] object-cover object-center will-change-transform"
@@ -600,7 +600,7 @@ const Hero = ({ setActiveTab }) => {
               onClick={() => setActiveTab("rooms")}
               className="bg-white text-emerald-950 px-8 py-4 rounded-sm uppercase tracking-widest text-sm font-bold hover:bg-stone-100 transition-transform hover:-translate-y-1 shadow-lg"
             >
-              Explore Our Suites
+              View Platinum Rooms
             </button>
             <button
               onClick={() =>
@@ -814,67 +814,6 @@ const RoomsList = ({ setActiveTab }) => {
   );
 };
 
-const Experience = () => {
-  return (
-    <section className="py-24 bg-emerald-950 text-white overflow-hidden">
-      <div className="container mx-auto px-6 relative">
-        <div className="max-w-4xl mx-auto text-center">
-          <Reveal>
-            <SectionHeading
-              sub="The Location"
-              title="Steps from the Slopes"
-              center={true}
-              dark={true}
-            />
-            <p className="text-stone-300 leading-loose mb-12 text-lg font-light max-w-2xl mx-auto">
-              We are situated just a short walk from the Gulmarg Gondola Base
-              Station. While others commute, you can stroll from the hotel to
-              the lift in minutes. Enjoy the convenience of returning quickly to
-              your doorstep after a day on the Apharwat peaks.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-white/10 pt-12">
-              {[
-                {
-                  title: "Gondola Base",
-                  dist: "200m (2 min Walk)",
-                  icon: (
-                    <MapPin className="w-6 h-6 text-amber-500 mx-auto mb-4" />
-                  ),
-                },
-                {
-                  title: "Ski Chair Lift",
-                  dist: "200m Walk",
-                  icon: (
-                    <Snowflake className="w-6 h-6 text-amber-500 mx-auto mb-4" />
-                  ),
-                },
-                {
-                  title: "Golf Course",
-                  dist: "5 min Drive",
-                  icon: (
-                    <Wind className="w-6 h-6 text-amber-500 mx-auto mb-4" />
-                  ),
-                },
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="group p-6 rounded-sm hover:bg-white/5 transition-colors"
-                >
-                  {item.icon}
-                  <h4 className="font-serif text-xl mb-2">{item.title}</h4>
-                  <span className="text-xs text-stone-400 uppercase tracking-widest">
-                    {item.dist}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </div>
-    </section>
-  );
-};
-
 const Dining = ({ setActiveTab }) => {
   return (
     <section className="py-24 bg-stone-100">
@@ -937,6 +876,67 @@ const Dining = ({ setActiveTab }) => {
               </button>
             </Reveal>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Experience = () => {
+  return (
+    <section className="py-24 bg-emerald-950 text-white overflow-hidden">
+      <div className="container mx-auto px-6 relative">
+        <div className="max-w-4xl mx-auto text-center">
+          <Reveal>
+            <SectionHeading
+              sub="The Location"
+              title="Steps from the Slopes"
+              center={true}
+              dark={true}
+            />
+            <p className="text-stone-300 leading-loose mb-12 text-lg font-light max-w-2xl mx-auto">
+              We are situated just a short walk from the Gulmarg Gondola Base
+              Station. While others commute, you can stroll from the hotel to
+              the lift in minutes. Enjoy the convenience of returning quickly to
+              your doorstep after a day on the Apharwat peaks.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-white/10 pt-12">
+              {[
+                {
+                  title: "Gondola Base",
+                  dist: "200m (2 min Walk)",
+                  icon: (
+                    <MapPin className="w-6 h-6 text-amber-500 mx-auto mb-4" />
+                  ),
+                },
+                {
+                  title: "Ski Chair Lift",
+                  dist: "200m Walk",
+                  icon: (
+                    <Snowflake className="w-6 h-6 text-amber-500 mx-auto mb-4" />
+                  ),
+                },
+                {
+                  title: "Golf Course",
+                  dist: "5 min Drive",
+                  icon: (
+                    <Wind className="w-6 h-6 text-amber-500 mx-auto mb-4" />
+                  ),
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="group p-6 rounded-sm hover:bg-white/5 transition-colors"
+                >
+                  {item.icon}
+                  <h4 className="font-serif text-xl mb-2">{item.title}</h4>
+                  <span className="text-xs text-stone-400 uppercase tracking-widest">
+                    {item.dist}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>
