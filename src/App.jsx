@@ -643,7 +643,7 @@ const GuestReviews = () => {
               <span className="text-stone-800 font-bold text-sm">4.8</span>
             </div>
             <p className="text-[10px] uppercase tracking-widest text-stone-500 font-medium">
-              Rated highly on Google • Trusted by Travelers all over India
+              Rated highly on Google • Trusted by Travelers all over the World
             </p>
           </div>
         </Reveal>
