@@ -267,7 +267,7 @@ const Reveal = ({ children, delay = 0 }) => {
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, delay, ease: "easeOut" }}
     >
       {children}
@@ -558,7 +558,7 @@ const Hero = ({ setActiveTab }) => {
               variant="secondary"
               onClick={() => setActiveTab("rooms")}
             >
-              View Platinum Rooms
+              Explore Our Suites
             </AnimatedButton>
             <AnimatedButton
               variant="outlineWhite"
@@ -1404,13 +1404,13 @@ export default function App() {
             <PageTransition key="home">
               <Hero setActiveTab={setActiveTab} />
               <Experience />
-              <MDMessage />
               <div id="rooms-preview">
                 <RoomsList
                   setActiveTab={setActiveTab}
                   setPreSelectedRoom={setPreSelectedRoom}
                 />
               </div>
+              <MDMessage />
               <Dining setActiveTab={setActiveTab} />
               <GuestReviews />
             </PageTransition>
