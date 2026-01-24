@@ -657,6 +657,17 @@ const GuestReviews = () => {
           </motion.div>
         ))}
       </div>
+
+      <div className="flex justify-center mt-8">
+        <a
+          href="https://www.google.com/travel/hotels/entity/CgsItuqYpe_BiOnJARAB/reviews?q=hotel%20pine%20palace%20platinum%20gulmarg&g2lb=4965990%2C72471280%2C72560029%2C72573224%2C72647020%2C72686036%2C72803964%2C72882230%2C72958624%2C73059275%2C73064764%2C73107089%2C73192290&hl=en-IN&gl=in&cs=1&ssta=1&ts=CAEaSQorEicyJTB4MzhlMWFmMjU4ZmQ1YTY3ZDoweGM5ZDIyMjBlZjRhNjM1MzYaABIaEhQKBwjqDxABGBsSBwjqDxABGBwYATICEAAqCQoFOgNJTlIaAA&qs=CAE4AkIJCTY1pvQOItLJQgkJNjWm9A4i0sk&ictx=111&utm_campaign=sharing&utm_medium=link&utm_source=htls"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-emerald-900 font-medium text-sm tracking-wide hover:text-amber-600 transition-colors border-b border-transparent hover:border-amber-600 pb-0.5"
+        >
+          Read more reviews on Google <ArrowRight size={16} />
+        </a>
+      </div>
     </section>
   );
 };
