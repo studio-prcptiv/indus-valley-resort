@@ -70,12 +70,12 @@ const useScrollTrigger = (threshold = 0) => {
 // --- CONFIGURATION ---
 
 const HOTEL_INFO = {
-  name: "Pine Palace Platinum",
-  location: "Gondola Base Station, Gulmarg",
-  whatsapp: "919596255222",
-  email: "reservations@pinepalaceresort.com",
-  address: "Near Gondola Base Station, Gulmarg, Kashmir 193403",
-  coordinates: "34.0506° N, 74.3879° E",
+  name: "Hotel Template",
+  location: "Your Location",
+  whatsapp: "0000000000",
+  email: "contact@yourhotel.com",
+  address: "Your Street Address, City, Country 000000",
+  coordinates: "00.0000° N, 00.0000° E",
 };
 
 // --- DATA ---
@@ -85,7 +85,7 @@ const ROOMS = [
     id: 1,
     title: "Platinum Club Room",
     price: "₹16,500",
-    desc: "Modern luxury meeting alpine tradition. Located in the new wing, these rooms offer sound-proofed windows and easy access to the Gondola base. The interiors are crafted with local pine wood, providing a warm, aromatic ambiance.",
+    desc: "Modern luxury meeting alpine tradition. Located in the new wing, these rooms offer sound-proofed windows and easy access to the main attractions. The interiors are crafted with local pine wood, providing a warm, aromatic ambiance.",
     features: [
       "King Size Bed",
       "Central Heating",
@@ -100,7 +100,7 @@ const ROOMS = [
     id: 2,
     title: "Platinum Suite",
     price: "₹24,000",
-    desc: "Expansive suites with a separate living area, offering panoramic views of the Apharwat peaks and the Gondola. Perfect for couples seeking privacy and luxury, featuring premium upholstery.",
+    desc: "Expansive suites with a separate living area, offering panoramic views of the mountain peaks. Perfect for couples seeking privacy and luxury, featuring premium upholstery.",
     features: ["Master Bedroom", "Living Area", "Bathtub", "Butler Service"],
     image:
       "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&q=60&w=600",
@@ -122,13 +122,13 @@ const GUEST_REVIEWS = [
   {
     name: "Arjun Mehta",
     rating: 5,
-    text: "Unbeatable location. It's barely a 2-minute walk to the Gondola.",
+    text: "Unbeatable location. It's barely a 2-minute walk to the main slopes.",
     date: "2 weeks ago",
   },
   {
     name: "Sarah Williams",
     rating: 5,
-    text: "The proximity to the Gondola is the real USP. Breathtaking views.",
+    text: "The proximity to the main attractions is the real USP. Breathtaking views.",
     date: "1 month ago",
   },
   {
@@ -382,12 +382,12 @@ const Navigation = ({ activeTab, setActiveTab }) => {
             <span
               className={`font-serif text-xl tracking-widest font-bold transition-colors duration-300 ${isDark ? "text-emerald-950" : "text-white"}`}
             >
-              PINE PALACE PLATINUM
+              HOTEL TEMPLATE
             </span>
             <span
-              className={`text-[0.6rem] uppercase tracking-[0.3em] transition-colors duration-300 ${isDark ? "text-amber-700" : "text-amber-400"}`}
+              className={`text-[0.6rem] uppercase tracking-[0.3em] font-bold transition-colors duration-300 ${isDark ? "text-amber-700" : "text-amber-400"}`}
             >
-              Gulmarg • Kashmir
+              A template by Perceptive
             </span>
           </div>
 
@@ -497,7 +497,7 @@ const Hero = ({ setActiveTab }) => {
           srcSet="https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&q=50&w=600 600w, 
                   https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&q=50&w=1400 1400w"
           sizes="100vw"
-          alt="Pine Palace Platinum Interior"
+          alt="Luxury Hotel Room"
           className="w-full h-[120%] object-cover object-center will-change-transform"
           fetchpriority="high"
         />
@@ -514,7 +514,7 @@ const Hero = ({ setActiveTab }) => {
           >
             <div className="h-[1px] w-12 bg-white/60" />
             <span className="uppercase tracking-[0.3em] text-white/90 text-sm font-light">
-              2 Mins to Gondola
+              Steps to the Slopes
             </span>
             <div className="h-[1px] w-12 bg-white/60" />
           </motion.div>
@@ -526,7 +526,7 @@ const Hero = ({ setActiveTab }) => {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="block"
             >
-              Pine Palace
+              Luxury Hotel
             </motion.span>
             <motion.span
               initial={{ opacity: 0, y: 30 }}
@@ -534,7 +534,7 @@ const Hero = ({ setActiveTab }) => {
               transition={{ delay: 0.6, duration: 0.8 }}
               className="block italic font-light opacity-90"
             >
-              Platinum
+              Template
             </motion.span>
           </h1>
 
@@ -544,8 +544,8 @@ const Hero = ({ setActiveTab }) => {
             transition={{ delay: 0.8, duration: 0.8 }}
             className="text-white/80 max-w-lg mx-auto mb-8 font-light text-lg"
           >
-            Experience the convenience of staying just 200 meters from the
-            Gondola base station.
+            Experience the convenience of staying in a prime location near the
+            main attractions.
           </motion.div>
 
           <motion.div
@@ -659,14 +659,12 @@ const GuestReviews = () => {
       </div>
 
       <div className="flex justify-center mt-8">
-        <a
-          href="https://www.google.com/travel/hotels/entity/CgsItuqYpe_BiOnJARAB/reviews?q=hotel%20pine%20palace%20platinum%20gulmarg&g2lb=4965990%2C72471280%2C72560029%2C72573224%2C72647020%2C72686036%2C72803964%2C72882230%2C72958624%2C73059275%2C73064764%2C73107089%2C73192290&hl=en-IN&gl=in&cs=1&ssta=1&ts=CAEaSQorEicyJTB4MzhlMWFmMjU4ZmQ1YTY3ZDoweGM5ZDIyMjBlZjRhNjM1MzYaABIaEhQKBwjqDxABGBsSBwjqDxABGBwYATICEAAqCQoFOgNJTlIaAA&qs=CAE4AkIJCTY1pvQOItLJQgkJNjWm9A4i0sk&ictx=111&utm_campaign=sharing&utm_medium=link&utm_source=htls"
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          onClick={() => setActiveTab("contact")}
           className="inline-flex items-center gap-2 text-emerald-900 font-medium text-sm tracking-wide hover:text-amber-600 transition-colors border-b border-transparent hover:border-amber-600 pb-0.5"
         >
-          Read more reviews on Google <ArrowRight size={16} />
-        </a>
+          Book Your Experience <ArrowRight size={16} />
+        </button>
       </div>
     </section>
   );
@@ -680,14 +678,13 @@ const MDMessage = () => (
           A Message from the Managing Director
         </h3>
         <p className="font-serif text-2xl md:text-3xl text-emerald-950 leading-relaxed mb-10 italic">
-          “At Pine Palace Platinum, our vision has always been simple, to offer
-          guests the rare luxury of location, warmth, and genuine Kashmiri
+          “At our hotel, our vision has always been simple: to offer
+          guests the rare luxury of location, warmth, and genuine
           hospitality.
           <br />
           <br />
-          Being just steps from the Gondola, we understand the value of time,
-          comfort, and care. Every detail in our Platinum Wing is designed so
-          you spend less time commuting and more time experiencing Gulmarg at
+          Experience the value of time, comfort, and care. Every detail of our property is designed so
+          you spend less time commuting and more time experiencing the destination at
           its finest.
           <br />
           <br />
@@ -695,8 +692,6 @@ const MDMessage = () => (
         </p>
         <div className="text-stone-500 font-sans tracking-wide text-sm">
           — Managing Director
-          <br />
-          Pine Palace Platinum, Gulmarg
         </div>
       </div>
     </Reveal>
@@ -708,7 +703,7 @@ const RoomsList = ({ setActiveTab }) => (
     <div className="container mx-auto px-6">
       <SectionHeading
         sub="Accommodations"
-        title="The Platinum Wing"
+        title="Our Accommodations"
         center={true}
       />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-12">
@@ -768,7 +763,7 @@ const Dining = ({ setActiveTab }) => (
             >
               <img
                 src="https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&q=75&w=800"
-                alt="Fine Dining at Pine Palace"
+                alt="Fine Dining Experience"
                 className="relative z-10 w-full shadow-xl rounded-sm"
                 loading="lazy"
               />
@@ -830,16 +825,16 @@ const Experience = () => (
             dark={true}
           />
           <p className="text-stone-300 leading-loose mb-12 text-lg font-light max-w-2xl mx-auto">
-            We are situated just a short walk from the Gulmarg Gondola Base
-            Station. While others commute, you can stroll from the hotel to the
-            lift in minutes. Enjoy the convenience of returning quickly to your
-            doorstep after a day on the Apharwat peaks.
+            We are situated in a prime location just a short walk from the main attractions.
+            While others commute, you can stroll from the hotel to the
+            local sights in minutes. Enjoy the convenience of returning quickly to your
+            doorstep after a day of exploration.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-white/10 pt-12">
             {[
               {
-                title: "Gondola Base",
-                dist: "200m (2 min Walk)",
+                title: "Local Attraction",
+                dist: "Easy 5 min Walk",
                 icon: MapPin,
               },
               { title: "Ski Chair Lift", dist: "200m Walk", icon: Snowflake },
@@ -1278,12 +1273,11 @@ const Footer = ({ setActiveTab }) => (
     <div className="container mx-auto px-6">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
         <div className="md:col-span-2">
-          <span className="font-serif text-3xl block mb-6">
-            PINE PALACE PLATINUM
+          <span className="font-serif text-3xl block mb-6 uppercase tracking-widest">
+            HOTEL TEMPLATE
           </span>
           <p className="text-stone-400 max-w-sm leading-relaxed mb-8 font-light">
-            The premier destination near the Gondola in Gulmarg. Luxury meets
-            adventure at 2,650 meters.
+            A premium hospitality template by Perceptive. Professional, modern, and ready for your hotel business.
           </p>
           <div className="flex gap-4">
             <motion.a
@@ -1328,19 +1322,19 @@ const Footer = ({ setActiveTab }) => (
             <li className="flex items-start gap-3">
               <MapPin size={16} className="mt-1 shrink-0 text-amber-500" />{" "}
               <span className="break-words">
-                Near Gondola Base Station,
+                Your Street Address,
                 <br />
-                Gulmarg, Kashmir 193403
+                City, Country 000000
               </span>
             </li>
             <li className="flex items-center gap-3">
               <Phone size={16} className="shrink-0 text-amber-500" />{" "}
-              <span className="break-words">+91 95962 55222</span>
+              <span className="break-words">+00 00000 00000</span>
             </li>
             <li className="flex items-center gap-3">
               <Mail size={16} className="mt-1 shrink-0 text-amber-500" />{" "}
               <span className="break-all">
-                reservations@pinepalaceresort.com
+                contact@yourhotel.com
               </span>
             </li>
           </ul>
@@ -1348,7 +1342,7 @@ const Footer = ({ setActiveTab }) => (
       </div>
       <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-stone-500">
         <p>
-          &copy; {new Date().getFullYear()} Pine Palace Platinum. All rights
+          &copy; {new Date().getFullYear()} Hotel Template. All rights
           reserved.
         </p>
         <div className="flex gap-1 md:mt-0 items-center">
@@ -1510,7 +1504,7 @@ export default function App() {
                           Our concierge team is available 24/7. Direct
                           reservations:{" "}
                           <span className="font-medium text-emerald-900">
-                            +91 95962 55222
+                            +00 00000 00000
                           </span>
                         </p>
                       </div>
@@ -1554,14 +1548,14 @@ export default function App() {
                     </div>
                     <div className="w-full md:w-1/2 relative min-h-[400px] md:min-h-full bg-stone-200">
                       <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d413.22934335121505!2d74.3788228429222!3d34.04810988728005!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e1af258fd5a67d%3A0xc9d2220ef4a63536!2sHotel%20Pine%20Palace%20Platinum%20Gulmarg!5e0!3m2!1sen!2sin!4v1769190771785!5m2!1sen!2sin"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3401.55627725832!2d-118.2436849!3d34.0522342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c63425379d17%3A0x3504173295c9603e!2sLos%20Angeles%20City%20Hall!5e0!3m2!1sen!2sus!4v1712694500000!5m2!1sen!2sus"
                         width="100%"
                         height="100%"
                         style={{ border: 0, position: "absolute", inset: 0 }}
                         allowFullScreen=""
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
-                        title="Pine Palace Location Map"
+                        title="Hotel Location Map"
                       ></iframe>
                     </div>
                   </motion.div>
