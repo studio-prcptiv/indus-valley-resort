@@ -1,96 +1,84 @@
-# Pine Palace Platinum – Official Website
+# 🏔️ Indus Valley Resort — Pahalgam, Kashmir
 
-This repository contains the official website for **Hotel Pine Palace Platinum**, a premium luxury hotel located near the Gondola Base Station in Gulmarg, Kashmir.
-
-The website is designed to reflect the hotel’s elegance, warmth, and prime location, while providing guests with a seamless browsing and booking experience.
+> *Experience the timeless charm of Pahalgam, surrounded by pristine pine forests, serene mountain views, and genuine Kashmiri hospitality.*
 
 ---
 
-## About the Hotel
+## 🌟 Welcome to Indus Valley Resort
 
-**Pine Palace Platinum** offers a refined stay experience just minutes from the Gulmarg Gondola.  
-The property blends modern comfort with traditional Kashmiri hospitality, making it ideal for leisure travelers, couples, families, and winter sports enthusiasts.
+Nestled along Kullar Road in Nagipora Dahwatoo, **Indus Valley Resort** is a premier mountain refuge in Pahalgam, Kashmir. Designed for families, couples, and mountain lovers, our resort combines modern comfort with authentic local heritage.
 
-Guests enjoy:
-
-- Heated luxury rooms and suites
-- Panoramic mountain and snow views
-- Authentic Kashmiri and multi-cuisine dining
-- Walking distance access to the Gondola
-- Personalized concierge service via WhatsApp
+Whether you're sipping warm Kashmiri Kahwa by the window or waking up to snow-peaked vistas, every corner of our property is crafted to make your stay unforgettable.
 
 ---
 
-## Website Purpose
+## 🛌 Accommodations & Seasonal Tariffs
 
-The website serves as a digital showcase of the hotel and its offerings.  
-It allows visitors to:
+We offer transparent seasonal tariffs with flexible meal plan options designed to suit every traveler.
 
-- Explore rooms and suites
-- Learn about the hotel’s location and experiences
-- View dining options and menus
-- Read guest testimonials
-- Send booking requests directly via WhatsApp
-- Contact the hotel easily and view the location on maps
+### 📊 Room Rates Breakdown
 
-The focus is on **clarity, elegance, and trust**, rather than complex booking systems.
+| Room Category | EP (Room Only) | CP (Breakfast) | MAP (Breakfast + Dinner) | AP (All Meals) | Max Occupancy |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| 🏔️ **Mountain View Room with Balcony** | ₹2,500/- | ₹3,200/- | ₹4,000/- | ₹4,800/- | 2 Guests |
+| 👨‍👩‍👧‍👦 **Family Room** | ₹4,000/- | ₹5,000/- | ₹6,000/- | ₹7,500/- | 4 Guests |
+| 🛏️ **Deluxe Room** | ₹2,000/- | ₹2,700/- | ₹3,500/- | ₹4,500/- | 2 Guests |
 
 ---
 
-## Key Sections
+### 👶 Child Policy & Extra Bed Rates
 
-- **Home** – Introduction to the hotel and its unique location
-- **Rooms & Suites** – Detailed overview of accommodations
-- **Experience** – Gondola access, winter sports, and surroundings
-- **Dining** – Kashmiri Wazwan and curated dining options
-- **Guest Reviews** – Real guest experiences and testimonials
-- **Message from the Managing Director** – Brand vision and hospitality philosophy
-- **Contact & Location** – Direct contact details and map access
+- 🍼 **Child Below 5 Years:** **Complimentary** stay & meals
+- 🛏️ **Extra Bed (Per Adult/Bed):**
+  - **EP:** ₹400/- • **CP:** ₹700/- • **MAP:** ₹1,000/- • **AP:** ₹1,300/-
+- 🧸 **CWOB (Child Without Extra Bed):**
+  - **EP:** Complimentary • **CP:** ₹400/- • **MAP:** ₹600/- • **AP:** ₹800/-
 
 ---
 
-## Booking Information
+### 🍽️ Meal Plan Guide
 
-The website does **not** use third-party booking engines.
-
-All reservations and inquiries are handled directly through:
-
-- **WhatsApp Concierge**
-- **Phone**
-- **Email**
-
-This ensures personal attention and best-rate communication.
+- 🔑 **EP (European Plan):** Room accommodation only.
+- ☕ **CP (Continental Plan):** Room stay including daily morning breakfast.
+- 🍲 **MAP (Modified American Plan):** Room stay including daily breakfast & dinner. *(Most Popular)*
+- 🍱 **AP (American Plan):** Full board accommodation including breakfast, lunch & dinner.
 
 ---
 
-## Brand & Design Philosophy
+## ✨ Resort Features & Highlights
 
-The design follows a **minimal, premium, and calm aesthetic**, inspired by:
-
-- Alpine luxury
-- Natural wood tones
-- Warm interiors
-- Snow-covered landscapes
-
-Animations and transitions are subtle, ensuring the experience feels smooth and refined.
-
----
-
-## Ownership & Usage
-
-This project is created exclusively for **Pine Palace Platinum**.
-
-All content, branding, and visuals are intended for official use only and should not be reused, copied, or distributed without permission.
+- 🌲 **Scenic Valley & Balcony Views:** Private balconies overlooking pine forests.
+- 🔥 **Central Heating & 24/7 Hot Water:** Reliable warmth throughout all seasons.
+- 🥘 **Authentic Kashmiri Wazwan:** Savor Rogan Josh, Gushtaba, Rista, and fresh river trout.
+- 🫖 **Lobby Lounge & Kahwa Bar:** Cozy fireplace ambiance with traditional herbal tea.
+- 📍 **Prime Location:** Minutes away from Pahalgam's iconic attractions:
+  - 🌊 **Lidder River & Rafting:** 2 km (5 min drive)
+  - 🏞️ **Betaab Valley:** 15 km (25 min drive)
+  - 🏔️ **Aru Valley:** 12 km (20 min drive)
+  - ⛳ **Pahalgam Golf Course:** 3 km (8 min drive)
 
 ---
 
-## Developed By
+## 📱 About This Website
 
-**Perceptive Co.**  
-Class-Leading Web Development & Performance Marketing Solutions.
+This website is designed for an effortless, elegant user experience:
 
-Website: https://www.prcptiv.com
+- 📱 **Mobile-First Responsive Layout:** Smooth scrolling and clear views across all devices.
+- 🖼️ **Interactive Photo Gallery:** Full-screen lightbox viewer showcasing resort suites and scenery.
+- 💳 **Selectable Meal Plan Calculator:** Live rate updates based on your chosen meal plan.
+- 💬 **Instant WhatsApp Reservations:** Direct 1-click booking concierge without middleman commissions.
 
 ---
 
-© Pine Palace Platinum. All rights reserved.
+## 📍 Location & Contact
+
+- 📌 **Address:** Kullar Road, Nagipora Dahwatoo, Pahalgam, Anantnag, Jammu & Kashmir – 192126
+- 📞 **Phone / WhatsApp:** [+91 70068 59178](https://wa.me/917006859178)
+- ✉️ **Email:** indusvalleyresortpahalgam@gmail.com
+- 🌐 **Official Website:** [Indus Valley Resort](https://www.indusvalleyresort.com)
+
+---
+
+<p center>
+  <i>Designed & Developed by <b>Perceptive Studio</b></i>
+</p>
