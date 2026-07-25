@@ -353,17 +353,19 @@ function Dining({ onOpenMenu }: DiningProps) {
     <section className="py-16 sm:py-24 bg-stone-100">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-12 lg:gap-16">
-          <div className="lg:w-1/2 relative w-full h-[250px] sm:h-[300px] md:h-[450px]">
+          <div className="lg:w-1/2 w-full">
             <Reveal>
-              <div className="absolute -top-3 -left-3 sm:-top-4 sm:-left-4 w-full h-full border-2 border-stone-900/20 z-0" />
-              <div className="relative z-10 w-full h-full shadow-xl rounded-sm overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&q=75&w=800"
-                  alt="Fine Dining Wazwan Experience"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
-                />
+              <div className="relative w-full h-[250px] sm:h-[300px] md:h-[450px]">
+                <div className="absolute -top-3 -left-3 sm:-top-4 sm:-left-4 w-full h-full border-2 border-stone-900/20 z-0" />
+                <div className="relative z-10 w-full h-full shadow-xl rounded-sm overflow-hidden">
+                  <Image
+                    src="/dining/1.jpeg"
+                    alt="Fine Dining Wazwan Experience"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </Reveal>
           </div>
