@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact & Booking | Direct Hotel Reservation Pahalgam Kashmir",
   description:
-    "Get in touch with Indus Valley Resort in Pahalgam, Kashmir. Call or WhatsApp +91 70068 59178 for direct room booking discounts, custom tour inquiries, and concierge service.",
+    "Get in touch with Indus Valley Resort in Pahalgam, Kashmir. Call or WhatsApp +91 8899901175 for direct room booking discounts, custom tour inquiries, and concierge service.",
   keywords: [
     "contact hotels in pahalgam",
     "pahalgam hotel whatsapp booking",

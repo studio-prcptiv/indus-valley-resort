@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, Building2 } from "lucide-react";
 import { trackBookingStart, trackPhoneClick, trackEmailClick } from "@/utils/analytics";
 import { HOTEL_INFO } from "@/data/hotel";
 
@@ -84,19 +84,30 @@ export default function Footer() {
             <ul className="space-y-4 text-sm text-stone-300 w-full">
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="mt-1 shrink-0 text-amber-500" aria-hidden="true" />
-                <span className="break-words font-light text-xs leading-relaxed">
-                  {HOTEL_INFO.address}
-                </span>
+                <div className="font-light text-xs leading-relaxed">
+                  <span className="text-stone-400 font-semibold block uppercase tracking-wider text-[10px] mb-0.5">Resort Address</span>
+                  <span>{HOTEL_INFO.address}, {HOTEL_INFO.district}</span>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <Building2 size={16} className="mt-1 shrink-0 text-amber-500" aria-hidden="true" />
+                <div className="font-light text-xs leading-relaxed">
+                  <span className="text-stone-400 font-semibold block uppercase tracking-wider text-[10px] mb-0.5">Head Office</span>
+                  <span>{HOTEL_INFO.headOfficeAddress}</span>
+                </div>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={16} className="shrink-0 text-amber-500" aria-hidden="true" />
-                <a
-                  href={`tel:${HOTEL_INFO.whatsapp.replace(/[^0-9+]/g, "")}`}
-                  onClick={() => trackPhoneClick("Footer")}
-                  className={`break-words hover:text-white transition-colors font-light ${linkFocusClasses}`}
-                >
-                  {HOTEL_INFO.whatsapp}
-                </a>
+                <div>
+                  <span className="text-stone-400 font-semibold block uppercase tracking-wider text-[10px] mb-0.5">Reservations &amp; Bookings</span>
+                  <a
+                    href={`tel:${HOTEL_INFO.reservationsPhone.replace(/[^0-9+]/g, "")}`}
+                    onClick={() => trackPhoneClick("Footer")}
+                    className={`break-words hover:text-white transition-colors font-light ${linkFocusClasses}`}
+                  >
+                    {HOTEL_INFO.reservationsPhone}
+                  </a>
+                </div>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={16} className="mt-1 shrink-0 text-amber-500" aria-hidden="true" />

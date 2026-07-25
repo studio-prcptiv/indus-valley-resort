@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s | Indus Valley Resort Pahalgam",
   },
   description:
-    "Looking for the best hotels in Pahalgam, Kashmir? Book directly at Indus Valley Resort on Kullar Road, Pahalgam. Experience mountain view balcony rooms from ₹2,000/night, EP/CP/MAP/AP meal plans, 24/7 hot water, central heating, and authentic Kashmiri Wazwan.",
+    "Looking for the best hotels in Pahalgam, Kashmir? Book directly at Indus Valley Resort at Dahwatoo, Rafting Point, Pahalgam. Experience mountain view balcony rooms from ₹2,500/night, EP/CP/MAP/AP meal plans, 24/7 hot water, central heating, and authentic Kashmiri Wazwan.",
   keywords: [
     "hotels in pahalgam",
     "hotels in kashmir",
@@ -110,10 +110,10 @@ export default function RootLayout({
               "description": "Indus Valley Resort is a luxury mountain resort located in Pahalgam, Kashmir. Offering mountain view balcony suites, central heating, 24/7 hot water, authentic Kashmiri Wazwan dining, and proximity to Lidder River and Betaab Valley.",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Kullar Road, Nagipora Dahwatoo",
+                "streetAddress": "Dahwatoo, Rafting Point",
                 "addressLocality": "Pahalgam",
                 "addressRegion": "Jammu and Kashmir",
-                "postalCode": "192126",
+                "postalCode": "1920401",
                 "addressCountry": "IN",
               },
               "geo": {
@@ -122,7 +122,7 @@ export default function RootLayout({
                 "longitude": 75.269961,
               },
               "url": "https://www.indusvalleyresort.com",
-              "telephone": "+917006859178",
+              "telephone": "+918899901175",
               "email": "indusvalleyresortpahalgam@gmail.com",
               "priceRange": "₹2000 - ₹7500",
               "starRating": {
@@ -153,7 +153,7 @@ export default function RootLayout({
               "contactPoint": [
                 {
                   "@type": "ContactPoint",
-                  "telephone": "+917006859178",
+                  "telephone": "+918899901175",
                   "contactType": "reservations",
                   "availableLanguage": ["English", "Hindi", "Kashmiri"],
                 },

@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Location & Directions | Hotel in Pahalgam Near Lidder River, Kashmir",
   description:
-    "Located on Kullar Road in Nagipora Dahwatoo, Pahalgam, Kashmir. Indus Valley Resort offers convenient access to Lidder River (2 km), Betaab Valley (15 km), Aru Valley (12 km), and Srinagar Airport (90 km).",
+    "Located at Dahwatoo, Rafting Point, Pahalgam, Kashmir. Indus Valley Resort offers convenient access to Lidder River (2 km), Betaab Valley (15 km), Aru Valley (12 km), and Srinagar Airport (70 km).",
   keywords: [
     "hotels in pahalgam location",
     "hotel near lidder river pahalgam",
     "hotels near betaab valley",
     "hotels near aru valley",
     "pahalgam map directions",
-    "kullar road nagipora dahwatoo pahalgam",
+    "dahwatoo rafting point pahalgam",
   ],
   alternates: {
     canonical: "https://www.indusvalleyresort.com/location",

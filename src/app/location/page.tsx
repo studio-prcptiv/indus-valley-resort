@@ -105,11 +105,19 @@ export default function Location() {
                 </div>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-stone-100 flex items-center justify-between text-xs uppercase tracking-widest font-bold text-stone-400">
-                <span>Address</span>
-                <span className="text-stone-950 text-right font-light leading-relaxed max-w-[250px]">
-                  {HOTEL_INFO.address}
-                </span>
+              <div className="mt-8 pt-6 border-t border-stone-100 flex flex-col gap-4 text-xs font-bold text-stone-400">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                  <span className="uppercase tracking-widest text-[10px]">Resort Address</span>
+                  <span className="text-stone-950 font-light leading-relaxed sm:text-right normal-case text-xs">
+                    {HOTEL_INFO.address}, {HOTEL_INFO.district}
+                  </span>
+                </div>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                  <span className="uppercase tracking-widest text-[10px]">Head Office</span>
+                  <span className="text-stone-950 font-light leading-relaxed sm:text-right normal-case text-xs">
+                    {HOTEL_INFO.headOfficeAddress}
+                  </span>
+                </div>
               </div>
             </div>
           </div>

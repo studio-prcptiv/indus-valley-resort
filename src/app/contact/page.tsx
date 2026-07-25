@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { MapPin, Phone, Mail, Building2 } from "lucide-react";
 import PageTransition from "@/components/PageTransition";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedButton from "@/components/AnimatedButton";
@@ -44,6 +45,57 @@ export default function Contact() {
             title="Contact & Location"
             center={true}
           />
+
+          {/* Quick Contact Info Cards */}
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div className="bg-white p-6 rounded-sm shadow-md border border-stone-100 flex items-start gap-4">
+              <div className="p-3 bg-amber-50 text-amber-700 rounded-sm shrink-0">
+                <Phone size={22} />
+              </div>
+              <div>
+                <h4 className="text-xs uppercase tracking-wider font-bold text-stone-500 mb-1">
+                  Reservations &amp; Bookings
+                </h4>
+                <a
+                  href={`tel:${HOTEL_INFO.reservationsPhone.replace(/[^0-9+]/g, "")}`}
+                  onClick={() => trackPhoneClick("Contact Page Top")}
+                  className="font-serif text-lg text-stone-900 font-semibold hover:text-amber-600 transition-colors block"
+                >
+                  {HOTEL_INFO.reservationsPhone}
+                </a>
+                <p className="text-xs text-stone-400 mt-1 font-light">Available 24/7 for direct bookings</p>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-sm shadow-md border border-stone-100 flex items-start gap-4">
+              <div className="p-3 bg-amber-50 text-amber-700 rounded-sm shrink-0">
+                <MapPin size={22} />
+              </div>
+              <div>
+                <h4 className="text-xs uppercase tracking-wider font-bold text-stone-500 mb-1">
+                  Resort Address
+                </h4>
+                <p className="text-sm text-stone-800 font-light leading-relaxed">
+                  {HOTEL_INFO.address}, {HOTEL_INFO.district}
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-sm shadow-md border border-stone-100 flex items-start gap-4">
+              <div className="p-3 bg-amber-50 text-amber-700 rounded-sm shrink-0">
+                <Building2 size={22} />
+              </div>
+              <div>
+                <h4 className="text-xs uppercase tracking-wider font-bold text-stone-500 mb-1">
+                  Head Office
+                </h4>
+                <p className="text-sm text-stone-800 font-light leading-relaxed">
+                  {HOTEL_INFO.headOfficeAddress}
+                </p>
+              </div>
+            </div>
+          </div>
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -57,13 +109,13 @@ export default function Contact() {
                 </h3>
                 <p className="text-stone-500 font-light text-sm leading-relaxed">
                   Our concierge team is available 24/7. Direct
-                  reservations:{" "}
+                  reservations &amp; inquiries:{" "}
                   <a
-                    href={`tel:${HOTEL_INFO.whatsapp.replace(/[^0-9+]/g, "")}`}
+                    href={`tel:${HOTEL_INFO.reservationsPhone.replace(/[^0-9+]/g, "")}`}
                     onClick={() => trackPhoneClick("Contact Page")}
                     className="font-medium text-stone-900 hover:text-amber-600 transition-colors focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none focus:rounded-sm"
                   >
-                    {HOTEL_INFO.whatsapp}
+                    {HOTEL_INFO.reservationsPhone}
                   </a>
                 </p>
               </div>

@@ -246,7 +246,7 @@ function LocationStats() {
           <Reveal>
             <SectionHeading sub="The Location" title="Heart of Pahalgam" center={true} dark={true} />
             <p className="text-stone-300 leading-loose mb-8 sm:mb-12 text-base sm:text-lg font-light max-w-2xl mx-auto px-2">
-              Situated on Kullar Road in Nagipora Dahwatoo, Pahalgam.
+              Situated at Dahwatoo, Rafting Point, Pahalgam.
               Enjoy tranquil pine forest surrounding, breathtaking valley landscapes, and convenient access to Pahalgam&apos;s legendary sights.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 border-t border-white/10 pt-8 sm:pt-12">

@@ -93,7 +93,7 @@ export default function RoomDetail({ params }: PageProps) {
             "containedInPlace": {
               "@type": "Hotel",
               "name": "Indus Valley Resort",
-              "address": "Kullar Road, Nagipora Dahwatoo, Pahalgam, Kashmir 192126"
+              "address": `${HOTEL_INFO.address}, ${HOTEL_INFO.district}`
             }
           })
         }}
