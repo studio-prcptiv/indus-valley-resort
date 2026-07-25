@@ -9,49 +9,75 @@ import React from "react";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "The Indus Valley Resort | Luxury Resort in Pahalgam, Kashmir",
+  metadataBase: new URL("https://www.indusvalleyresort.com"),
+  title: {
+    default: "Indus Valley Resort | Best Luxury Hotel in Pahalgam, Kashmir",
+    template: "%s | Indus Valley Resort Pahalgam",
+  },
   description:
-    "Book directly at The Indus Valley Resort, Pahalgam for best rates guaranteed. Experience luxury mountain accommodations, authentic Kashmiri Wazwan dining, and breathtaking valley views.",
+    "Looking for the best hotels in Pahalgam, Kashmir? Book directly at Indus Valley Resort on Kullar Road, Pahalgam. Experience mountain view balcony rooms from ₹2,000/night, EP/CP/MAP/AP meal plans, 24/7 hot water, central heating, and authentic Kashmiri Wazwan.",
   keywords: [
-    "The Indus Valley Resort",
-    "Pahalgam hotel",
-    "luxury resort Pahalgam",
-    "direct booking Pahalgam",
-    "Kashmiri Wazwan",
-    "Pahalgam luxury suites",
+    "hotels in pahalgam",
+    "hotels in kashmir",
+    "best hotel in pahalgam",
+    "luxury resort in pahalgam",
+    "resorts in pahalgam kashmir",
+    "pahalgam hotel room price",
+    "hotels near lidder river pahalgam",
+    "indus valley resort pahalgam",
+    "deluxe room in pahalgam",
+    "family hotels in pahalgam",
+    "kashmir luxury hotels",
+    "pahalgam hotel booking",
+    "cheap hotels in pahalgam",
+    "top 10 hotels in pahalgam",
+    "pahalgam resorts with balcony view",
   ],
-  authors: [{ name: "The Indus Valley Resort" }],
+  authors: [{ name: "Indus Valley Resort Pahalgam" }],
+  creator: "Indus Valley Resort",
+  publisher: "Indus Valley Resort",
+  formatDetection: {
+    telephone: true,
+    address: true,
+    email: true,
+  },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   alternates: {
-    canonical: "https://indusvalleyresort.com/",
+    canonical: "https://www.indusvalleyresort.com",
   },
   openGraph: {
     type: "website",
-    url: "https://indusvalleyresort.com/",
-    title: "The Indus Valley Resort | Luxury Resort & Suites in Pahalgam",
+    url: "https://www.indusvalleyresort.com",
+    title: "Indus Valley Resort | Best Luxury Hotel & Resort in Pahalgam, Kashmir",
     description:
-      "Experience luxury mountain accommodations in Pahalgam with authentic Kashmiri Wazwan dining and serene river views. Book direct for room upgrades.",
+      "Book your stay at Indus Valley Resort, Pahalgam. Luxury mountain rooms, balcony valley views, flexible meal plans (EP, CP, MAP, AP), and authentic Kashmiri Wazwan.",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&q=80&w=1200",
+        url: "/hotel/1.jpeg",
         width: 1200,
         height: 630,
-        alt: "The Indus Valley Resort Luxury Lounge",
+        alt: "Indus Valley Resort Luxury Hotel in Pahalgam Kashmir",
       },
     ],
-    siteName: "The Indus Valley Resort",
+    siteName: "Indus Valley Resort Pahalgam",
+    locale: "en_IN",
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Indus Valley Resort | Luxury Resort & Suites in Pahalgam",
+    title: "Indus Valley Resort | Best Luxury Hotel in Pahalgam, Kashmir",
     description:
-      "Experience luxury mountain accommodations in Pahalgam with authentic Kashmiri Wazwan dining. Book direct for best rates.",
-    images: [
-      "https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&q=80&w=1200",
-    ],
+      "Luxury hotel in Pahalgam with mountain balcony views, central heating, 24/7 hot water, and Kashmiri Wazwan dining. Direct booking rates.",
+    images: ["/hotel/1.jpeg"],
   },
 };
 
@@ -64,79 +90,89 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/icon.png" />
-        <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Preconnect lists */}
 
+        {/* Hotel & Lodging Business Schema.org JSON-LD */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Hotel",
-              "name": "The Indus Valley Resort",
+              "@type": ["Hotel", "Resort", "LodgingBusiness"],
+              "name": "Indus Valley Resort",
+              "alternateName": ["Hotel Indus Valley Resort Pahalgam", "Indus Valley Resort Kashmir"],
               "image": [
-                "https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&q=80&w=1200",
-                "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&q=80&w=1200",
+                "https://www.indusvalleyresort.com/hotel/1.jpeg",
+                "https://www.indusvalleyresort.com/hotel/2.jpeg",
+                "https://www.indusvalleyresort.com/rooms/mountainview/1.jpeg",
               ],
-              "description": "Premium luxury meeting mountain tradition in Pahalgam. Enjoy central heating, regional hospitality, and authentic Wazwan dining.",
+              "description": "Indus Valley Resort is a luxury mountain resort located in Pahalgam, Kashmir. Offering mountain view balcony suites, central heating, 24/7 hot water, authentic Kashmiri Wazwan dining, and proximity to Lidder River and Betaab Valley.",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Kullar Road, Nagipora Dahwatoo",
                 "addressLocality": "Pahalgam",
-                "addressRegion": "Jammu & Kashmir",
-                "postalCode": "192401",
-                "addressCountry": "India",
+                "addressRegion": "Jammu and Kashmir",
+                "postalCode": "192126",
+                "addressCountry": "IN",
               },
-              "url": "https://indusvalleyresort.com/",
-              "telephone": "+919797800119",
-              "email": "contact@indusvalleyresort.com",
-              "priceRange": "₹16500 - ₹28500",
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 33.920263,
+                "longitude": 75.269961,
+              },
+              "url": "https://www.indusvalleyresort.com",
+              "telephone": "+917006859178",
+              "email": "indusvalleyresortpahalgam@gmail.com",
+              "priceRange": "₹2000 - ₹7500",
               "starRating": {
                 "@type": "Rating",
-                "ratingValue": "5",
+                "ratingValue": "4.8",
               },
               "aggregateRating": {
                 "@type": "AggregateRating",
-                "ratingValue": "4.9",
-                "reviewCount": "128",
+                "ratingValue": "4.8",
+                "reviewCount": "142",
+                "bestRating": "5",
+                "worstRating": "1",
+              },
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                  "Sunday"
+                ],
+                "opens": "00:00",
+                "closes": "23:59"
               },
               "contactPoint": [
                 {
                   "@type": "ContactPoint",
-                  "telephone": "+919797800119",
-                  "contactType": "customer service",
+                  "telephone": "+917006859178",
+                  "contactType": "reservations",
                   "availableLanguage": ["English", "Hindi", "Kashmiri"],
                 },
               ],
               "amenityFeature": [
-                {
-                  "@type": "LocationFeatureSpecification",
-                  "name": "Luxury Rooms & Suites",
-                  "value": "True",
-                },
-                {
-                  "@type": "LocationFeatureSpecification",
-                  "name": "Kashmiri Wazwan Restaurant",
-                  "value": "True",
-                },
-                {
-                  "@type": "LocationFeatureSpecification",
-                  "name": "Central Heating",
-                  "value": "True",
-                },
-                {
-                  "@type": "LocationFeatureSpecification",
-                  "name": "Mountain & River Views",
-                  "value": "True",
-                },
-                {
-                  "@type": "LocationFeatureSpecification",
-                  "name": "Free Wi-Fi",
-                  "value": "True",
-                },
+                { "@type": "LocationFeatureSpecification", "name": "Mountain View Balcony", "value": "True" },
+                { "@type": "LocationFeatureSpecification", "name": "Central Heating", "value": "True" },
+                { "@type": "LocationFeatureSpecification", "name": "24/7 Hot Water", "value": "True" },
+                { "@type": "LocationFeatureSpecification", "name": "Kashmiri Wazwan Restaurant", "value": "True" },
+                { "@type": "LocationFeatureSpecification", "name": "Lobby Lounge & Kahwa Bar", "value": "True" },
+                { "@type": "LocationFeatureSpecification", "name": "Free High-Speed Wi-Fi", "value": "True" },
+                { "@type": "LocationFeatureSpecification", "name": "Free Parking", "value": "True" },
               ],
+              "containsPlace": [
+                { "@type": "TouristAttraction", "name": "Lidder River", "distance": "2 km" },
+                { "@type": "TouristAttraction", "name": "Betaab Valley", "distance": "15 km" },
+                { "@type": "TouristAttraction", "name": "Aru Valley", "distance": "12 km" },
+                { "@type": "TouristAttraction", "name": "Pahalgam Golf Course", "distance": "3 km" }
+              ]
             }),
           }}
         />

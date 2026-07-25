@@ -67,6 +67,37 @@ export default function RoomDetail({ params }: PageProps) {
 
   return (
     <PageTransition>
+      {/* HotelRoom Schema.org JSON-LD for Search Engines */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HotelRoom",
+            "name": `${room.title} - Indus Valley Resort Pahalgam`,
+            "description": room.desc,
+            "image": room.images.map((img) => `https://www.indusvalleyresort.com${img}`),
+            "occupancy": {
+              "@type": "QuantitativeValue",
+              "value": room.maxGuests || "2",
+              "unitCode": "C62"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": room.tariffs.ep,
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock",
+              "validFrom": "2026-01-01",
+              "url": `https://www.indusvalleyresort.com/rooms/${room.slug}`
+            },
+            "containedInPlace": {
+              "@type": "Hotel",
+              "name": "Indus Valley Resort",
+              "address": "Kullar Road, Nagipora Dahwatoo, Pahalgam, Kashmir 192126"
+            }
+          })
+        }}
+      />
       <div className="pt-20 sm:pt-24 bg-stone-50 min-h-screen">
         {/* Banner */}
         <div className="bg-stone-900 text-white py-10 sm:py-16 px-4 sm:px-6 text-center">

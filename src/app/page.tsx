@@ -101,9 +101,9 @@ function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.8 }}
-          className="text-white/80 max-w-md lg:max-w-lg mx-auto mb-6 sm:mb-8 font-light text-base sm:text-lg px-4"
+          className="text-white/80 max-w-md lg:max-w-xl mx-auto mb-6 sm:mb-8 font-light text-base sm:text-lg px-4"
         >
-          Experience luxury and serene mountain views in Pahalgam, surrounded by pristine pine forests and river streams.
+          Experience luxury mountain accommodations and balcony valley views at one of the finest resorts & hotels in Pahalgam, Kashmir.
         </motion.div>
 
         <motion.div
