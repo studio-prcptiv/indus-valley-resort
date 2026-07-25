@@ -123,7 +123,7 @@ export default function Footer() {
               href="https://www.prcptiv.com"
               target="_blank"
               rel="noopener noreferrer"
-              className={`text-stone-300 hover:text-amber-500 transition-colors font-medium inline-block hover:-translate-y-1 transform duration-200 ${linkFocusClasses}`}
+              className={`text-stone-300 hover:text-white transition-colors font-medium inline-block hover:-translate-y-1 transform duration-200 ${linkFocusClasses}`}
             >
               Perceptive Studio
             </a>
