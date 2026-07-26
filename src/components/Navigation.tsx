@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const MotionLink = motion(Link);
+import Image from "next/image";
 import { trackBookingStart } from "@/utils/analytics";
 import { HOTEL_INFO } from "@/data/hotel";
 
@@ -69,24 +70,37 @@ export default function Navigation() {
         <div className="container mx-auto px-6 flex justify-between items-center">
           <Link
             href="/"
-            className="flex flex-col cursor-pointer z-50 group focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none focus:rounded-sm"
+            className="flex items-center gap-3.5 cursor-pointer z-50 group focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none focus:rounded-sm"
             aria-label="Go to homepage"
             onClick={() => setMobileMenuOpen(false)}
           >
-            <span
-              className={`font-serif text-lg md:text-xl tracking-widest font-bold transition-colors duration-300 ${
-                isDark ? "text-stone-950" : "text-white"
+            <Image
+              src="/logo.png"
+              alt={HOTEL_INFO.name}
+              width={140}
+              height={58}
+              priority
+              className={`h-7 md:h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105 ${
+                isDark ? "" : "drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]"
               }`}
-            >
-              {HOTEL_INFO.name.toUpperCase()}
-            </span>
-            <span
-              className={`text-[0.6rem] uppercase tracking-[0.3em] font-bold transition-colors duration-300 ${
-                isDark ? "text-amber-700" : "text-amber-400"
-              }`}
-            >
-              {HOTEL_INFO.location}
-            </span>
+            />
+            <div className={`h-6 w-[1px] transition-colors duration-300 ${isDark ? "bg-stone-300" : "bg-white/20"}`} />
+            <div className="flex flex-col justify-center">
+              <span
+                className={`font-serif text-xs md:text-sm tracking-[0.2em] font-bold uppercase transition-colors duration-300 ${
+                  isDark ? "text-stone-900" : "text-white"
+                }`}
+              >
+                Indus Valley
+              </span>
+              <span
+                className={`text-[0.55rem] uppercase tracking-[0.3em] font-bold transition-colors duration-300 ${
+                  isDark ? "text-amber-700" : "text-amber-400"
+                }`}
+              >
+                Resort · Pahalgam
+              </span>
+            </div>
           </Link>
 
           <div className="hidden md:flex gap-8 items-center">
