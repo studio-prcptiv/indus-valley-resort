@@ -18,7 +18,23 @@ export const metadata: Metadata = {
     description:
       "Contact our 24/7 concierge for direct reservations, room upgrades, and travel guidance in Pahalgam, Kashmir.",
     url: "https://www.indusvalleyresort.com/contact",
-    images: ["/hotel/1.jpeg"],
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Contact Indus Valley Resort Pahalgam Kashmir",
+      },
+    ],
+    siteName: "Indus Valley Resort Pahalgam",
+    locale: "en_IN",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact & Booking | Indus Valley Resort Pahalgam Kashmir",
+    description:
+      "Contact our 24/7 concierge for direct reservations, room upgrades, and travel guidance in Pahalgam, Kashmir.",
+    images: ["/og-image.png"],
   },
 };
 

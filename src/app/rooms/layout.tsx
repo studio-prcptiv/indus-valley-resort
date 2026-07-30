@@ -21,7 +21,23 @@ export const metadata: Metadata = {
     description:
       "Direct room tariffs for Mountain View Balcony, Family, and Deluxe rooms in Pahalgam, Kashmir. Transparent rates with flexible meal plan options.",
     url: "https://www.indusvalleyresort.com/rooms",
-    images: ["/rooms/mountainview/1.jpeg"],
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Rooms & Seasonal Tariffs - Indus Valley Resort Pahalgam Kashmir",
+      },
+    ],
+    siteName: "Indus Valley Resort Pahalgam",
+    locale: "en_IN",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rooms & Seasonal Tariffs | Indus Valley Resort Pahalgam Kashmir",
+    description:
+      "Direct room tariffs for Mountain View Balcony, Family, and Deluxe rooms in Pahalgam, Kashmir. Transparent rates with flexible meal plan options.",
+    images: ["/og-image.png"],
   },
 };
 

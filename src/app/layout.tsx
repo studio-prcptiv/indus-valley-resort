@@ -41,6 +41,13 @@ export const metadata: Metadata = {
     address: true,
     email: true,
   },
+  icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/png" },
+    ],
+    shortcut: ["/favicon.png"],
+    apple: [{ url: "/favicon.png" }],
+  },
   robots: {
     index: true,
     follow: true,
@@ -63,7 +70,7 @@ export const metadata: Metadata = {
       "Book your stay at Indus Valley Resort, Pahalgam. Luxury mountain rooms, balcony valley views, flexible meal plans (EP, CP, MAP, AP), and authentic Kashmiri Wazwan.",
     images: [
       {
-        url: "/hotel/1.jpeg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Indus Valley Resort Luxury Hotel in Pahalgam Kashmir",
@@ -77,7 +84,7 @@ export const metadata: Metadata = {
     title: "Indus Valley Resort | Best Luxury Hotel in Pahalgam, Kashmir",
     description:
       "Luxury hotel in Pahalgam with mountain balcony views, central heating, 24/7 hot water, and Kashmiri Wazwan dining. Direct booking rates.",
-    images: ["/hotel/1.jpeg"],
+    images: ["/og-image.png"],
   },
 };
 
@@ -89,7 +96,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/icon.png" />
+        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
+        <link rel="shortcut icon" href="/favicon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
@@ -103,10 +112,12 @@ export default function RootLayout({
               "name": "Indus Valley Resort",
               "alternateName": ["Hotel Indus Valley Resort Pahalgam", "Indus Valley Resort Kashmir"],
               "image": [
+                "https://www.indusvalleyresort.com/og-image.png",
                 "https://www.indusvalleyresort.com/hotel/1.jpeg",
                 "https://www.indusvalleyresort.com/hotel/2.jpeg",
                 "https://www.indusvalleyresort.com/rooms/mountainview/1.jpeg",
               ],
+              "logo": "https://www.indusvalleyresort.com/logo.png",
               "description": "Indus Valley Resort is a luxury mountain resort located in Pahalgam, Kashmir. Offering mountain view balcony suites, central heating, 24/7 hot water, authentic Kashmiri Wazwan dining, and proximity to Lidder River and Betaab Valley.",
               "address": {
                 "@type": "PostalAddress",

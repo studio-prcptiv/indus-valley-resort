@@ -20,7 +20,23 @@ export const metadata: Metadata = {
     description:
       "Map and travel instructions for Indus Valley Resort, Pahalgam. Close to Lidder River, Betaab Valley, and Pahalgam Golf Course.",
     url: "https://www.indusvalleyresort.com/location",
-    images: ["/hotel/1.jpeg"],
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Location Map - Indus Valley Resort Pahalgam Kashmir",
+      },
+    ],
+    siteName: "Indus Valley Resort Pahalgam",
+    locale: "en_IN",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Location & Directions | Indus Valley Resort Pahalgam Kashmir",
+    description:
+      "Map and travel instructions for Indus Valley Resort, Pahalgam. Close to Lidder River, Betaab Valley, and Pahalgam Golf Course.",
+    images: ["/og-image.png"],
   },
 };
 

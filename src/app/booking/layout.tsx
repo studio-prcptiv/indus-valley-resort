@@ -18,7 +18,23 @@ export const metadata: Metadata = {
     description:
       "Direct room reservation form for Indus Valley Resort, Pahalgam. Unlock direct booking perks and best rate guarantees.",
     url: "https://www.indusvalleyresort.com/booking",
-    images: ["/hotel/1.jpeg"],
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Reserve Your Stay at Indus Valley Resort Pahalgam Kashmir",
+      },
+    ],
+    siteName: "Indus Valley Resort Pahalgam",
+    locale: "en_IN",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Reserve Your Stay | Indus Valley Resort Pahalgam Kashmir",
+    description:
+      "Direct room reservation form for Indus Valley Resort, Pahalgam. Unlock direct booking perks and best rate guarantees.",
+    images: ["/og-image.png"],
   },
 };
 

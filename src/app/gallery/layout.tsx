@@ -18,7 +18,23 @@ export const metadata: Metadata = {
     description:
       "Full-screen photo gallery showcasing accommodations, interiors, and scenic mountain views at Indus Valley Resort, Pahalgam.",
     url: "https://www.indusvalleyresort.com/gallery",
-    images: ["/gallery/1.jpeg"],
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Photo Gallery - Indus Valley Resort Pahalgam Kashmir",
+      },
+    ],
+    siteName: "Indus Valley Resort Pahalgam",
+    locale: "en_IN",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Photo Gallery | Indus Valley Resort Pahalgam Kashmir",
+    description:
+      "Full-screen photo gallery showcasing accommodations, interiors, and scenic mountain views at Indus Valley Resort, Pahalgam.",
+    images: ["/og-image.png"],
   },
 };
 
