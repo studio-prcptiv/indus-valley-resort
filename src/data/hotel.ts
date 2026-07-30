@@ -195,40 +195,52 @@ export const ROOMS: Room[] = [
 
 export const GUEST_REVIEWS: GuestReview[] = [
   {
-    name: "Arjun Mehta",
+    name: "Rajesh Sharma",
     rating: 5,
-    text: "Unbeatable location. It's barely a short walk to the serene Lidder riverbank and pine trails.",
-    date: "2 weeks ago",
-  },
-  {
-    name: "Sarah Williams",
-    rating: 5,
-    text: "The proximity to the main attractions is the real USP. Breathtaking views.",
-    date: "1 month ago",
-  },
-  {
-    name: "Vikram Singh",
-    rating: 4,
-    text: "Great property. The wooden interiors give a very cozy vibe.",
-    date: "3 weeks ago",
-  },
-  {
-    name: "Priya D.",
-    rating: 5,
-    text: "Absolutely loved the experience. Hot water was available 24/7.",
-    date: "2 months ago",
-  },
-  {
-    name: "Daniel Foster",
-    rating: 5,
-    text: "The heating and cozy rooms were a lifesaver in Pahalgam.",
+    text: "The hospitality at Indus Valley Resort is truly world-class. From the moment we arrived, the staff treated us like family. Prompt service, 24/7 hot water, and central heating made our stay delightfully comfortable.",
     date: "1 week ago",
   },
   {
-    name: "Sophie Anderson",
+    name: "Ananya Mukherjee",
     rating: 5,
-    text: "Coming from Europe, I was impressed by the warm Kashmiri hospitality.",
+    text: "The authentic Kashmiri Wazwan at their restaurant was the absolute highlight of our trip! The Rogan Josh and hot Kahwa served in a cozy dining atmosphere created an unforgettable experience.",
+    date: "2 weeks ago",
+  },
+  {
+    name: "Vikramaditya Rao",
+    rating: 5,
+    text: "Breathtaking mountain balcony views paired with the peaceful sounds of Lidder River nearby. The serene pine-forested atmosphere makes this the finest luxury retreat in Pahalgam.",
+    date: "3 weeks ago",
+  },
+  {
+    name: "Sneha Verma",
+    rating: 5,
+    text: "Impeccable service and heartwarming Kashmiri hospitality. The resort team went out of their way to customize our meal preferences and arrange local sightseeing.",
+    date: "1 month ago",
+  },
+  {
+    name: "Rohan Deshmukh",
+    rating: 5,
+    text: "Exceptional food quality and warm ambiance! Their morning breakfast spread and rich Wazwan delicacies were top-tier. The wooden suite interiors give a luxurious, cozy vibe.",
+    date: "1 month ago",
+  },
+  {
+    name: "Kavita Reddy",
+    rating: 5,
+    text: "The staff's attention to detail and personal service blew us away. Waking up to pristine valley views from our private balcony was pure magic.",
     date: "2 months ago",
+  },
+  {
+    name: "Amitav Patel",
+    rating: 5,
+    text: "A tranquil paradise nestled in Pahalgam. Premier room amenities, courteous staff, gourmet dining, and a serene mountain atmosphere guaranteed a perfect vacation.",
+    date: "2 months ago",
+  },
+  {
+    name: "Dr. Siddharth Kapoor",
+    rating: 5,
+    text: "Outstanding hospitality, mouthwatering Kashmiri cuisine, and exceptionally prompt service. The team ensured every aspect of our family stay was seamless.",
+    date: "3 months ago",
   },
 ];
 
