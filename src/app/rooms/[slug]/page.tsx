@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronRight, ArrowRight, CheckCircle, Info, Calendar } from "lucide-react";
+import { ChevronRight, ChevronLeft, ArrowRight, CheckCircle, Info, Calendar } from "lucide-react";
 import { ROOMS, HOTEL_INFO } from "@/data/hotel";
 import PageTransition from "@/components/PageTransition";
 import Reveal from "@/components/Reveal";
@@ -27,6 +27,51 @@ export default function RoomDetail({ params }: PageProps) {
   const room = ROOMS.find((r) => r.slug === slug);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [selectedPlanKey, setSelectedPlanKey] = useState<"ep" | "cp" | "map" | "ap">("ep");
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+
+  const thumbnailContainerRef = useRef<HTMLDivElement>(null);
+  const thumbnailRefs = useRef<(HTMLButtonElement | null)[]>([]);
+
+  const handleNextImage = () => {
+    if (!room) return;
+    setActiveImageIndex((prev) => (prev + 1) % room.images.length);
+    trackRoomGalleryInteraction(room.title);
+  };
+
+  const handlePrevImage = () => {
+    if (!room) return;
+    setActiveImageIndex((prev) => (prev - 1 + room.images.length) % room.images.length);
+    trackRoomGalleryInteraction(room.title);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX === null || !room) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diffX = touchStartX - touchEndX;
+
+    if (Math.abs(diffX) > 40) {
+      if (diffX > 0) {
+        handleNextImage();
+      } else {
+        handlePrevImage();
+      }
+    }
+    setTouchStartX(null);
+  };
+
+  useEffect(() => {
+    if (thumbnailRefs.current[activeImageIndex]) {
+      thumbnailRefs.current[activeImageIndex]?.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
+    }
+  }, [activeImageIndex]);
 
   if (!room) {
     return (
@@ -67,6 +112,11 @@ export default function RoomDetail({ params }: PageProps) {
 
   return (
     <PageTransition>
+      {/* Preload full room images for instant gallery switching */}
+      {room.images.map((img, idx) => (
+        <link key={idx} rel="preload" as="image" href={img} />
+      ))}
+
       {/* HotelRoom Schema.org JSON-LD for Search Engines */}
       <script
         type="application/ld+json"
@@ -153,33 +203,71 @@ export default function RoomDetail({ params }: PageProps) {
             <div className="lg:col-span-2 space-y-8 sm:space-y-12">
               {/* Image Viewer */}
               <div className="space-y-3 sm:space-y-4">
-                <div className="relative h-[220px] sm:h-[350px] md:h-[480px] w-full rounded-sm overflow-hidden shadow-xl bg-stone-100">
+                <div
+                  onTouchStart={handleTouchStart}
+                  onTouchEnd={handleTouchEnd}
+                  className="relative h-[240px] sm:h-[380px] md:h-[500px] w-full rounded-sm overflow-hidden shadow-xl bg-stone-900 group select-none cursor-grab active:cursor-grabbing"
+                >
                   <Image
                     src={room.images[activeImageIndex]}
                     alt={`${room.title} view ${activeImageIndex + 1}`}
                     fill
                     priority
-                    sizes="(max-width: 1024px) 100vw, 66vw"
-                    className="object-cover transition-all duration-500"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 800px"
+                    className="object-cover transition-opacity duration-300"
                   />
-                  <div className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-stone-900/90 text-white text-[10px] sm:text-xs px-2 sm:px-3 py-1 rounded-sm uppercase tracking-widest z-10">
+
+                  {/* Left / Right Nav Arrows */}
+                  <button
+                    onClick={handlePrevImage}
+                    aria-label="Previous Photo"
+                    className="absolute left-2.5 sm:left-4 top-1/2 -translate-y-1/2 bg-stone-950/60 hover:bg-amber-600 text-white p-2 rounded-full transition-all backdrop-blur-xs opacity-90 sm:opacity-0 group-hover:opacity-100 focus:opacity-100 z-10 cursor-pointer shadow-lg"
+                  >
+                    <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+                  </button>
+                  <button
+                    onClick={handleNextImage}
+                    aria-label="Next Photo"
+                    className="absolute right-2.5 sm:right-4 top-1/2 -translate-y-1/2 bg-stone-950/60 hover:bg-amber-600 text-white p-2 rounded-full transition-all backdrop-blur-xs opacity-90 sm:opacity-0 group-hover:opacity-100 focus:opacity-100 z-10 cursor-pointer shadow-lg"
+                  >
+                    <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+                  </button>
+
+                  <div className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-stone-950/80 backdrop-blur-xs text-white text-[10px] sm:text-xs px-2.5 py-1 rounded-xs uppercase tracking-widest font-semibold z-10">
                     {activeImageIndex + 1} / {room.images.length}
+                  </div>
+                  <div className="absolute bottom-3 left-3 sm:hidden bg-stone-950/60 text-white text-[9px] px-2 py-0.5 rounded-xs uppercase tracking-wider">
+                    Swipe left/right
                   </div>
                 </div>
 
-                {/* Thumbnails */}
-                <div className="flex gap-2 sm:gap-4 overflow-x-auto pb-2 scrollbar-hide">
+                {/* Thumbnails Strip - Enabled Mobile Sliding & Lenis Prevention */}
+                <div
+                  ref={thumbnailContainerRef}
+                  data-lenis-prevent
+                  className="flex gap-2 sm:gap-3 overflow-x-auto pb-2 scrollbar-hide snap-x snap-mandatory touch-pan-x overscroll-x-contain"
+                >
                   {room.images.map((img, index) => (
                     <button
                       key={index}
-                      onClick={() => { setActiveImageIndex(index); trackRoomGalleryInteraction(room.title); }}
-                      className={`relative w-16 h-12 sm:w-28 sm:h-20 rounded-sm overflow-hidden border-2 transition-all flex-shrink-0 ${
+                      ref={(el) => { thumbnailRefs.current[index] = el; }}
+                      onClick={() => {
+                        setActiveImageIndex(index);
+                        trackRoomGalleryInteraction(room.title);
+                      }}
+                      className={`relative w-20 h-14 sm:w-28 sm:h-20 rounded-xs overflow-hidden border-2 transition-all shrink-0 snap-start cursor-pointer focus-visible:outline-none ${
                         activeImageIndex === index
-                          ? "border-amber-600 scale-95 shadow-md"
-                          : "border-transparent opacity-65 hover:opacity-100"
+                          ? "border-amber-600 ring-2 ring-amber-500/40 shadow-md scale-95"
+                          : "border-stone-200/80 opacity-70 hover:opacity-100"
                       }`}
                     >
-                      <Image src={img} alt={`Thumbnail ${index + 1}`} fill sizes="112px" className="object-cover" />
+                      <Image
+                        src={img}
+                        alt={`Thumbnail ${index + 1}`}
+                        fill
+                        sizes="120px"
+                        className="object-cover"
+                      />
                     </button>
                   ))}
                 </div>
