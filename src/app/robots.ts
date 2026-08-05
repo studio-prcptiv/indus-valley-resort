@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/_next/"],
       },
     ],
-    sitemap: "https://www.indusvalleyresort.com/sitemap.xml",
+    sitemap: "https://hotelindusvalley.com/sitemap.xml",
   };
 }

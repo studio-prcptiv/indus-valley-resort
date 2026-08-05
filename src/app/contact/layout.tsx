@@ -11,18 +11,20 @@ export const metadata: Metadata = {
     "direct reservation pahalgam kashmir",
   ],
   alternates: {
-    canonical: "https://www.indusvalleyresort.com/contact",
+    canonical: "https://hotelindusvalley.com/contact",
   },
   openGraph: {
     title: "Contact & Booking | Indus Valley Resort Pahalgam Kashmir",
     description:
       "Contact our 24/7 concierge for direct reservations, room upgrades, and travel guidance in Pahalgam, Kashmir.",
-    url: "https://www.indusvalleyresort.com/contact",
+    url: "https://hotelindusvalley.com/contact",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://hotelindusvalley.com/og-image.png",
+        secureUrl: "https://hotelindusvalley.com/og-image.png",
         width: 1200,
         height: 630,
+        type: "image/png",
         alt: "Contact Indus Valley Resort Pahalgam Kashmir",
       },
     ],
@@ -34,7 +36,14 @@ export const metadata: Metadata = {
     title: "Contact & Booking | Indus Valley Resort Pahalgam Kashmir",
     description:
       "Contact our 24/7 concierge for direct reservations, room upgrades, and travel guidance in Pahalgam, Kashmir.",
-    images: ["/og-image.png"],
+    images: [
+      {
+        url: "https://hotelindusvalley.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Contact Indus Valley Resort Pahalgam Kashmir",
+      },
+    ],
   },
 };
 

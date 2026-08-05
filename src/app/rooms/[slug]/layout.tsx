@@ -20,6 +20,9 @@ export async function generateMetadata({
     };
   }
 
+  const imageUrl = room.image ? `https://hotelindusvalley.com${room.image}` : "https://hotelindusvalley.com/og-image.png";
+  const imageType = room.image?.endsWith(".png") ? "image/png" : "image/jpeg";
+
   return {
     title: `${room.title} | Hotel Room Booking Pahalgam Kashmir`,
     description: `Book ${room.title} at Indus Valley Resort in Pahalgam, Kashmir. ${room.desc} Mountain balcony views starting at ₹${room.tariffs.ep.toLocaleString("en-IN")}/night.`,
@@ -31,18 +34,28 @@ export async function generateMetadata({
       "mountain view balcony room pahalgam",
     ],
     alternates: {
-      canonical: `https://www.indusvalleyresort.com/rooms/${slug}`,
+      canonical: `https://hotelindusvalley.com/rooms/${slug}`,
     },
     openGraph: {
       title: `${room.title} | Indus Valley Resort Pahalgam Kashmir`,
       description: room.desc,
-      url: `https://www.indusvalleyresort.com/rooms/${slug}`,
+      url: `https://hotelindusvalley.com/rooms/${slug}`,
       images: [
         {
-          url: "/og-image.png",
+          url: imageUrl,
+          secureUrl: imageUrl,
           width: 1200,
           height: 630,
+          type: imageType,
           alt: `${room.title} - Indus Valley Resort Pahalgam Kashmir`,
+        },
+        {
+          url: "https://hotelindusvalley.com/og-image.png",
+          secureUrl: "https://hotelindusvalley.com/og-image.png",
+          width: 1200,
+          height: 630,
+          type: "image/png",
+          alt: "Indus Valley Resort Pahalgam Kashmir",
         },
       ],
       siteName: "Indus Valley Resort Pahalgam",
@@ -52,7 +65,14 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: `${room.title} | Indus Valley Resort Pahalgam Kashmir`,
       description: room.desc,
-      images: ["/og-image.png"],
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: `${room.title} - Indus Valley Resort Pahalgam Kashmir`,
+        },
+      ],
     },
   };
 }

@@ -14,18 +14,20 @@ export const metadata: Metadata = {
     "ep cp map ap meal plans pahalgam",
   ],
   alternates: {
-    canonical: "https://www.indusvalleyresort.com/rooms",
+    canonical: "https://hotelindusvalley.com/rooms",
   },
   openGraph: {
     title: "Rooms & Seasonal Tariffs | Indus Valley Resort Pahalgam Kashmir",
     description:
       "Direct room tariffs for Mountain View Balcony, Family, and Deluxe rooms in Pahalgam, Kashmir. Transparent rates with flexible meal plan options.",
-    url: "https://www.indusvalleyresort.com/rooms",
+    url: "https://hotelindusvalley.com/rooms",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://hotelindusvalley.com/og-image.png",
+        secureUrl: "https://hotelindusvalley.com/og-image.png",
         width: 1200,
         height: 630,
+        type: "image/png",
         alt: "Rooms & Seasonal Tariffs - Indus Valley Resort Pahalgam Kashmir",
       },
     ],
@@ -37,7 +39,14 @@ export const metadata: Metadata = {
     title: "Rooms & Seasonal Tariffs | Indus Valley Resort Pahalgam Kashmir",
     description:
       "Direct room tariffs for Mountain View Balcony, Family, and Deluxe rooms in Pahalgam, Kashmir. Transparent rates with flexible meal plan options.",
-    images: ["/og-image.png"],
+    images: [
+      {
+        url: "https://hotelindusvalley.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Rooms & Seasonal Tariffs - Indus Valley Resort Pahalgam Kashmir",
+      },
+    ],
   },
 };
 

@@ -1,9 +1,9 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.indusvalleyresort.com";
+  const baseUrl = "https://hotelindusvalley.com";
 
-  const roomSlugs = ["mountain-view-balcony", "family-room", "deluxe-room"];
+  const roomSlugs = ["mountain-view-room-balcony", "family-room", "deluxe-room"];
 
   const roomUrls = roomSlugs.map((slug) => ({
     url: `${baseUrl}/rooms/${slug}`,

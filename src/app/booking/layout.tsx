@@ -11,18 +11,20 @@ export const metadata: Metadata = {
     "best hotel rates pahalgam",
   ],
   alternates: {
-    canonical: "https://www.indusvalleyresort.com/booking",
+    canonical: "https://hotelindusvalley.com/booking",
   },
   openGraph: {
     title: "Reserve Your Stay | Indus Valley Resort Pahalgam Kashmir",
     description:
       "Direct room reservation form for Indus Valley Resort, Pahalgam. Unlock direct booking perks and best rate guarantees.",
-    url: "https://www.indusvalleyresort.com/booking",
+    url: "https://hotelindusvalley.com/booking",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://hotelindusvalley.com/og-image.png",
+        secureUrl: "https://hotelindusvalley.com/og-image.png",
         width: 1200,
         height: 630,
+        type: "image/png",
         alt: "Reserve Your Stay at Indus Valley Resort Pahalgam Kashmir",
       },
     ],
@@ -34,7 +36,14 @@ export const metadata: Metadata = {
     title: "Reserve Your Stay | Indus Valley Resort Pahalgam Kashmir",
     description:
       "Direct room reservation form for Indus Valley Resort, Pahalgam. Unlock direct booking perks and best rate guarantees.",
-    images: ["/og-image.png"],
+    images: [
+      {
+        url: "https://hotelindusvalley.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Reserve Your Stay at Indus Valley Resort Pahalgam Kashmir",
+      },
+    ],
   },
 };
 

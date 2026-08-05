@@ -126,7 +126,7 @@ export default function RoomDetail({ params }: PageProps) {
             "@type": "HotelRoom",
             "name": `${room.title} - Indus Valley Resort Pahalgam`,
             "description": room.desc,
-            "image": room.images.map((img) => `https://www.indusvalleyresort.com${img}`),
+            "image": room.images.map((img) => `https://hotelindusvalley.com${img}`),
             "occupancy": {
               "@type": "QuantitativeValue",
               "value": room.maxGuests || "2",
@@ -138,7 +138,7 @@ export default function RoomDetail({ params }: PageProps) {
               "priceCurrency": "INR",
               "availability": "https://schema.org/InStock",
               "validFrom": "2026-01-01",
-              "url": `https://www.indusvalleyresort.com/rooms/${room.slug}`
+              "url": `https://hotelindusvalley.com/rooms/${room.slug}`
             },
             "containedInPlace": {
               "@type": "Hotel",

@@ -13,18 +13,20 @@ export const metadata: Metadata = {
     "dahwatoo rafting point pahalgam",
   ],
   alternates: {
-    canonical: "https://www.indusvalleyresort.com/location",
+    canonical: "https://hotelindusvalley.com/location",
   },
   openGraph: {
     title: "Location & Directions | Indus Valley Resort Pahalgam Kashmir",
     description:
       "Map and travel instructions for Indus Valley Resort, Pahalgam. Close to Lidder River, Betaab Valley, and Pahalgam Golf Course.",
-    url: "https://www.indusvalleyresort.com/location",
+    url: "https://hotelindusvalley.com/location",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://hotelindusvalley.com/og-image.png",
+        secureUrl: "https://hotelindusvalley.com/og-image.png",
         width: 1200,
         height: 630,
+        type: "image/png",
         alt: "Location Map - Indus Valley Resort Pahalgam Kashmir",
       },
     ],
@@ -36,7 +38,14 @@ export const metadata: Metadata = {
     title: "Location & Directions | Indus Valley Resort Pahalgam Kashmir",
     description:
       "Map and travel instructions for Indus Valley Resort, Pahalgam. Close to Lidder River, Betaab Valley, and Pahalgam Golf Course.",
-    images: ["/og-image.png"],
+    images: [
+      {
+        url: "https://hotelindusvalley.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Location Map - Indus Valley Resort Pahalgam Kashmir",
+      },
+    ],
   },
 };
 

@@ -11,18 +11,20 @@ export const metadata: Metadata = {
     "pahalgam mountain view room photos",
   ],
   alternates: {
-    canonical: "https://www.indusvalleyresort.com/gallery",
+    canonical: "https://hotelindusvalley.com/gallery",
   },
   openGraph: {
     title: "Photo Gallery | Indus Valley Resort Pahalgam Kashmir",
     description:
       "Full-screen photo gallery showcasing accommodations, interiors, and scenic mountain views at Indus Valley Resort, Pahalgam.",
-    url: "https://www.indusvalleyresort.com/gallery",
+    url: "https://hotelindusvalley.com/gallery",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://hotelindusvalley.com/og-image.png",
+        secureUrl: "https://hotelindusvalley.com/og-image.png",
         width: 1200,
         height: 630,
+        type: "image/png",
         alt: "Photo Gallery - Indus Valley Resort Pahalgam Kashmir",
       },
     ],
@@ -34,7 +36,14 @@ export const metadata: Metadata = {
     title: "Photo Gallery | Indus Valley Resort Pahalgam Kashmir",
     description:
       "Full-screen photo gallery showcasing accommodations, interiors, and scenic mountain views at Indus Valley Resort, Pahalgam.",
-    images: ["/og-image.png"],
+    images: [
+      {
+        url: "https://hotelindusvalley.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Photo Gallery - Indus Valley Resort Pahalgam Kashmir",
+      },
+    ],
   },
 };
 
