@@ -5,11 +5,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-
-const MotionLink = motion(Link);
 import Image from "next/image";
 import { trackBookingStart } from "@/utils/analytics";
 import { HOTEL_INFO } from "@/data/hotel";
+
+const MotionLink = motion(Link);
 
 const useScrollTrigger = (threshold = 0): [React.RefObject<HTMLDivElement | null>, boolean] => {
   const [isTriggered, setIsTriggered] = useState(false);
@@ -48,6 +48,30 @@ export default function Navigation() {
     { name: "Gallery", href: "/gallery" },
     { name: "Contact", href: "/contact" },
   ];
+
+  // Lock body scroll when mobile menu is open & listen for Escape key
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "Escape") {
+          setMobileMenuOpen(false);
+        }
+      };
+      window.addEventListener("keydown", handleKeyDown);
+      return () => {
+        document.body.style.overflow = "";
+        window.removeEventListener("keydown", handleKeyDown);
+      };
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [mobileMenuOpen]);
+
+  // Auto-close mobile menu on route change
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
 
   return (
     <>
@@ -103,6 +127,7 @@ export default function Navigation() {
             </div>
           </Link>
 
+          {/* Desktop Navigation Links */}
           <div className="hidden md:flex gap-8 items-center">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
@@ -143,68 +168,140 @@ export default function Navigation() {
             </MotionLink>
           </div>
 
+          {/* Mobile Hamburger Button */}
           <button
-            className="md:hidden z-50 transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none focus:rounded-sm"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            className="md:hidden z-50 transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none focus:rounded-sm p-1.5 -mr-1.5 cursor-pointer"
+            onClick={() => setMobileMenuOpen(true)}
+            aria-label="Open menu"
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-menu"
           >
-            {mobileMenuOpen ? (
-              <X className="text-stone-950" />
-            ) : (
-              <Menu className={isDark ? "text-stone-950" : "text-white"} />
-            )}
+            <Menu className={isDark ? "text-stone-950 w-6 h-6" : "text-white w-6 h-6"} />
           </button>
         </div>
       </motion.nav>
 
+      {/* Fullscreen Mobile Navigation Modal with Frosted Glass Blur */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
             id="mobile-menu"
-            initial={{ opacity: 0, y: "-100%" }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: "-100%" }}
-            transition={{ duration: 0.4, ease: "circOut" }}
-            className="fixed inset-0 bg-stone-50 z-40 flex flex-col justify-center items-center gap-8 md:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="fixed inset-0 z-50 flex flex-col md:hidden bg-stone-900/20 backdrop-blur-2xl"
             role="dialog"
             aria-modal="true"
             aria-label="Mobile Navigation Menu"
           >
-            {navLinks.map((link, i) => (
-              <motion.div
-                key={link.name}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 + i * 0.1 }}
-              >
-                <Link
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  aria-current={pathname === link.href ? "page" : undefined}
-                  className="font-serif text-3xl text-stone-950 hover:text-amber-600 active:scale-90 focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none focus:rounded-sm"
-                >
-                  {link.name}
-                </Link>
-              </motion.div>
-            ))}
-            <div className="w-12 h-[1px] bg-stone-300 my-4" />
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
+              initial={{ y: "-100%", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: "-100%", opacity: 0 }}
+              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full h-full bg-white/70 backdrop-blur-2xl flex flex-col justify-between overflow-y-auto"
             >
-              <Link
-                href="/booking"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  trackBookingStart("Mobile Header CTA");
-                }}
-                className="bg-stone-950 text-white px-8 py-3 uppercase tracking-widest text-xs font-bold inline-block focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none focus:rounded-sm"
-              >
-                Book Your Stay
-              </Link>
+              {/* Mobile Menu Top Header Bar with Exit Button */}
+              <div className="w-full px-6 py-4 flex justify-between items-center border-b border-stone-300/40 bg-white/40 backdrop-blur-md sticky top-0 z-10">
+                <Link
+                  href="/"
+                  className="flex items-center gap-3 group focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none focus:rounded-sm"
+                  aria-label="Go to homepage"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <Image
+                    src="/logo.png"
+                    alt={HOTEL_INFO.name}
+                    width={130}
+                    height={54}
+                    priority
+                    className="h-7 w-auto object-contain"
+                  />
+                  <div className="h-5 w-[1px] bg-stone-300" />
+                  <div className="flex flex-col">
+                    <span className="font-serif text-xs tracking-[0.2em] font-bold uppercase text-stone-900">
+                      Indus Valley
+                    </span>
+                    <span className="text-[0.5rem] uppercase tracking-[0.3em] font-bold text-amber-700">
+                      Resort · Pahalgam
+                    </span>
+                  </div>
+                </Link>
+
+                {/* Prominent Exit Button */}
+                <button
+                  type="button"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-stone-900 text-white hover:bg-stone-800 active:scale-95 transition-all text-xs font-semibold tracking-wider uppercase shadow-sm focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none cursor-pointer"
+                  aria-label="Close menu"
+                >
+                  <span>Exit</span>
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+
+              {/* Minimal Navigation Links */}
+              <div className="flex-1 flex flex-col justify-center items-center px-6 py-8">
+                <div className="flex flex-col items-center gap-6 w-full max-w-xs">
+                  {navLinks.map((link, i) => {
+                    const isActive = pathname === link.href;
+                    return (
+                      <motion.div
+                        key={link.name}
+                        initial={{ opacity: 0, y: 12 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.05 + i * 0.05 }}
+                        className="w-full text-center"
+                      >
+                        <Link
+                          href={link.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          aria-current={isActive ? "page" : undefined}
+                          className={`font-serif text-3xl tracking-wide transition-colors duration-200 inline-block ${
+                            isActive
+                              ? "text-amber-700 font-bold"
+                              : "text-stone-800 hover:text-stone-950 active:scale-95"
+                          }`}
+                        >
+                          {link.name}
+                        </Link>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+
+                <div className="w-12 h-[1px] bg-stone-300/60 my-7" />
+
+                {/* Primary CTA */}
+                <motion.div
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="w-full max-w-xs"
+                >
+                  <Link
+                    href="/booking"
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      trackBookingStart("Mobile Header CTA");
+                    }}
+                    className="w-full text-center bg-stone-950 text-white px-8 py-3.5 uppercase tracking-widest text-xs font-bold transition-all active:scale-95 shadow-md hover:bg-stone-900 block rounded-xs"
+                  >
+                    Book Your Stay
+                  </Link>
+                </motion.div>
+              </div>
+
+              {/* Bottom Resort Information Footer */}
+              <div className="px-6 py-4 border-t border-stone-300/40 bg-white/30 text-center">
+                <p className="text-[0.7rem] text-stone-500 tracking-wider uppercase font-medium">
+                  {HOTEL_INFO.address}
+                </p>
+                <p className="text-xs text-amber-700 font-semibold mt-0.5">
+                  Reservations: {HOTEL_INFO.phone}
+                </p>
+              </div>
             </motion.div>
           </motion.div>
         )}
@@ -212,3 +309,5 @@ export default function Navigation() {
     </>
   );
 }
+
+
