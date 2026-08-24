@@ -2,11 +2,11 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Building2 } from "lucide-react";
+import { MapPin, Phone, Mail, Building2, ExternalLink } from "lucide-react";
 import PageTransition from "@/components/PageTransition";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedButton from "@/components/AnimatedButton";
-import { trackEvent, trackPhoneClick } from "@/utils/analytics";
+import { trackEvent, trackPhoneClick, trackEmailClick } from "@/utils/analytics";
 import { HOTEL_INFO } from "@/data/hotel";
 
 export default function Contact() {
@@ -47,23 +47,43 @@ export default function Contact() {
           />
 
           {/* Quick Contact Info Cards */}
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             <div className="bg-white p-6 rounded-sm shadow-md border border-stone-100 flex items-start gap-4">
               <div className="p-3 bg-amber-50 text-amber-700 rounded-sm shrink-0">
                 <Phone size={22} />
               </div>
               <div>
                 <h4 className="text-xs uppercase tracking-wider font-bold text-stone-500 mb-1">
-                  Reservations &amp; Bookings
+                  Reservations
                 </h4>
                 <a
                   href={`tel:${HOTEL_INFO.reservationsPhone.replace(/[^0-9+]/g, "")}`}
                   onClick={() => trackPhoneClick("Contact Page Top")}
-                  className="font-serif text-lg text-stone-900 font-semibold hover:text-amber-600 transition-colors block"
+                  className="font-serif text-base text-stone-900 font-semibold hover:text-amber-600 transition-colors block"
                 >
                   {HOTEL_INFO.reservationsPhone}
                 </a>
-                <p className="text-xs text-stone-400 mt-1 font-light">Available 24/7 for direct bookings</p>
+                <p className="text-[11px] text-stone-400 mt-1 font-light">Available 24/7</p>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-sm shadow-md border border-stone-100 flex items-start gap-4">
+              <div className="p-3 bg-amber-50 text-amber-700 rounded-sm shrink-0">
+                <Mail size={22} />
+              </div>
+              <div className="min-w-0">
+                <h4 className="text-xs uppercase tracking-wider font-bold text-stone-500 mb-1">
+                  Email Us
+                </h4>
+                <a
+                  href={`mailto:${HOTEL_INFO.email}`}
+                  onClick={() => trackEmailClick("Contact Page Top")}
+                  className="font-serif text-sm text-stone-900 font-semibold hover:text-amber-600 transition-colors block truncate"
+                  title={HOTEL_INFO.email}
+                >
+                  {HOTEL_INFO.email}
+                </a>
+                <p className="text-[11px] text-stone-400 mt-1 font-light">Quick response guaranteed</p>
               </div>
             </div>
 
@@ -75,7 +95,7 @@ export default function Contact() {
                 <h4 className="text-xs uppercase tracking-wider font-bold text-stone-500 mb-1">
                   Resort Address
                 </h4>
-                <p className="text-sm text-stone-800 font-light leading-relaxed">
+                <p className="text-xs text-stone-800 font-light leading-relaxed">
                   {HOTEL_INFO.address}, {HOTEL_INFO.district}
                 </p>
               </div>
@@ -89,7 +109,7 @@ export default function Contact() {
                 <h4 className="text-xs uppercase tracking-wider font-bold text-stone-500 mb-1">
                   Head Office
                 </h4>
-                <p className="text-sm text-stone-800 font-light leading-relaxed">
+                <p className="text-xs text-stone-800 font-light leading-relaxed">
                   {HOTEL_INFO.headOfficeAddress}
                 </p>
               </div>
@@ -184,17 +204,37 @@ export default function Contact() {
                 </AnimatedButton>
               </form>
             </div>
-            <div className="w-full md:w-1/2 relative min-h-[400px] md:min-h-full bg-stone-200">
+            <div className="w-full md:w-1/2 relative min-h-[420px] bg-stone-100 flex flex-col justify-end">
               <iframe
-                src="https://maps.google.com/maps?q=33.920263,75.269961&z=14&output=embed"
+                src={HOTEL_INFO.mapEmbedUrl}
                 width="100%"
                 height="100%"
-                style={{ border: 0, position: "absolute", inset: 0 }}
+                className="w-full h-full border-0 absolute inset-0"
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="The Indus Valley Resort Location Map"
+                title="Indus Valley Resort Location Map"
               ></iframe>
+              <div className="relative z-10 p-4 m-4 bg-white/95 backdrop-blur-md shadow-lg rounded-sm border border-stone-200/80 flex items-center justify-between gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 bg-amber-50 text-amber-700 rounded-sm shrink-0">
+                    <MapPin size={18} />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-stone-900 font-serif">Indus Valley Resort</p>
+                    <p className="text-[11px] text-stone-500 font-light">Dahwatoo, Rafting Point, Pahalgam</p>
+                  </div>
+                </div>
+                <a
+                  href={HOTEL_INFO.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-stone-900 text-white hover:bg-amber-700 transition-colors text-xs font-sans rounded-sm font-medium tracking-wide shrink-0 shadow-sm"
+                >
+                  <span>Open Maps</span>
+                  <ExternalLink size={12} />
+                </a>
+              </div>
             </div>
           </motion.div>
         </div>

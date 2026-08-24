@@ -143,7 +143,7 @@ export default function RootLayout({
               },
               "url": "https://hotelindusvalley.com",
               "telephone": "+918899901175",
-              "email": "indusvalleyresortpahalgam@gmail.com",
+              "email": "reservations@hotelindusvalley.com",
               "priceRange": "₹2000 - ₹7500",
               "starRating": {
                 "@type": "Rating",

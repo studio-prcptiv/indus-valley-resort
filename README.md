@@ -74,7 +74,7 @@ This website is designed for an effortless, elegant user experience:
 
 - 📌 **Address:** Kullar Road, Nagipora Dahwatoo, Pahalgam, Anantnag, Jammu & Kashmir – 192126
 - 📞 **Phone / WhatsApp:** [+91 70068 59178](https://wa.me/917006859178)
-- ✉️ **Email:** indusvalleyresortpahalgam@gmail.com
+- ✉️ **Email:** reservations@hotelindusvalley.com
 - 🌐 **Official Website:** [Indus Valley Resort](https://www.indusvalleyresort.com)
 
 ---

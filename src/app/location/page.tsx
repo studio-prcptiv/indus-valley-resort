@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { MapPin, Plane, Train, Compass, ChevronRight } from "lucide-react";
+import { MapPin, Plane, Train, Compass, ChevronRight, ExternalLink } from "lucide-react";
 import { HOTEL_INFO, ATTRACTIONS } from "@/data/hotel";
 import PageTransition from "@/components/PageTransition";
 import SectionHeading from "@/components/SectionHeading";
@@ -36,17 +36,37 @@ export default function Location() {
         <div className="container mx-auto px-6 py-20">
           <div className="flex flex-col lg:flex-row gap-12 items-stretch">
             {/* Map Frame */}
-            <div className="w-full lg:w-1/2 min-h-[400px] bg-stone-200 shadow-xl rounded-sm overflow-hidden relative">
+            <div className="w-full lg:w-1/2 min-h-[450px] bg-stone-100 shadow-xl rounded-sm overflow-hidden relative flex flex-col justify-end">
               <iframe
-                src="https://maps.google.com/maps?q=33.920263,75.269961&z=14&output=embed"
+                src={HOTEL_INFO.mapEmbedUrl}
                 width="100%"
                 height="100%"
-                style={{ border: 0, position: "absolute", inset: 0 }}
+                className="w-full h-full border-0 absolute inset-0"
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="The Indus Valley Resort Map"
+                title="Indus Valley Resort Map"
               ></iframe>
+              <div className="relative z-10 p-4 m-4 bg-white/95 backdrop-blur-md shadow-lg rounded-sm border border-stone-200/80 flex items-center justify-between gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 bg-amber-50 text-amber-700 rounded-sm shrink-0">
+                    <MapPin size={18} />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-stone-900 font-serif">Indus Valley Resort</p>
+                    <p className="text-[11px] text-stone-500 font-light">{HOTEL_INFO.address}</p>
+                  </div>
+                </div>
+                <a
+                  href={HOTEL_INFO.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-stone-900 text-white hover:bg-amber-700 transition-colors text-xs font-sans rounded-sm font-medium tracking-wide shrink-0 shadow-sm"
+                >
+                  <span>Get Directions</span>
+                  <ExternalLink size={12} />
+                </a>
+              </div>
             </div>
 
             {/* Directions info */}
@@ -149,9 +169,14 @@ export default function Location() {
                       </p>
                     </div>
                     
-                    <div className="mt-6 pt-4 border-t border-stone-50 flex items-center justify-end text-amber-700 text-xs font-bold tracking-widest uppercase hover:text-amber-600 cursor-pointer transition-colors group">
+                    <a
+                      href={`https://maps.google.com/?q=${encodeURIComponent(attr.name + " Pahalgam")}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-6 pt-4 border-t border-stone-50 flex items-center justify-end text-amber-700 text-xs font-bold tracking-widest uppercase hover:text-amber-600 transition-colors group"
+                    >
                       Get Directions <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                    </div>
+                    </a>
                   </div>
                 </Reveal>
               ))}

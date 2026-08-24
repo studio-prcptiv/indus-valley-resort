@@ -83,13 +83,15 @@ export const HOTEL_INFO = {
   whatsapp: "+91 8899901175",
   phone: "+91 8899901175",
   reservationsPhone: "+91 8899901175",
-  email: "contact@indusvalleyresort.com",
+  email: "reservations@hotelindusvalley.com",
   address: "Dahwatoo, Rafting Point, Pahalgam, 1920401",
   district: "Anantnag, Jammu & Kashmir India",
   headOfficeAddress: "3rd Floor Ali Jan Complex, M.A Road, Srinagar, Jammu & Kashmir, India, 190001",
   coordinates: "33.920263, 75.269961",
   airportDistance: "Srinagar International Airport (SXR) - 70km (approx. 2 hr drive)",
   railwayDistance: "Anantnag Railway Station - 40 km (approx. 45 mins drive)",
+  mapEmbedUrl: "https://maps.google.com/maps?q=Indus%20Valley%20Resort,%20Dahwatoo,%20Pahalgam&t=&z=15&ie=UTF8&iwloc=&output=embed",
+  googleMapsUrl: "https://maps.google.com/?q=Indus+Valley+Resort+Dahwatoo+Pahalgam",
 };
 
 export const ROOMS: Room[] = [
