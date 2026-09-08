@@ -129,7 +129,7 @@ export default function Footer() {
             reserved. Official Site.
           </p>
           <div className="flex gap-1 md:mt-0 items-center">
-            <span>Designed &amp; Developed by</span>
+            <span>Powered by</span>
             <a
               href="https://www.prcptiv.com"
               target="_blank"
